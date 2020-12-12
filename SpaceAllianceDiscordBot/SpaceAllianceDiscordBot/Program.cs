@@ -16,6 +16,8 @@ namespace SpaceAllianceDiscordBot
         private CommandService _commands;
         private IServiceProvider _services;
 
+
+
         //public IServiceProvider BuildServiceProvider() => new ServiceCollection()
         //.AddSingleton(_client)
         //.AddSingleton(_commands)
@@ -31,7 +33,7 @@ namespace SpaceAllianceDiscordBot
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "Nzg3MjIzNzQxMzQ3MjY2NjAx.X9R1PQ.pbcP75XdXiePHQtI7C4S_Xwi3JQ";
+            string token = System.Configuration.ConfigurationSettings.AppSettings["Token"];
 
             _client.Log += _client_Log;
 
